@@ -68,6 +68,20 @@ module DE10_LITE_Golden_Top(
 //  REG/WIRE declarations
 //=======================================================
 
+unsaved system(
+		.button_external_connection_export(KEY[1:0]),
+		.clk_clk(MAX10_CLK1_50),
+		.hex_0_external_connection_export(HEX0),
+		.hex_1_external_connection_export(HEX1),
+		.hex_2_external_connection_export(HEX2),
+		.hex_3_external_connection_export(HEX3),
+		.hex_4_external_connection_export(HEX4),
+		.hex_5_external_connection_export(HEX5),
+		.led_external_connection_export(LEDR[9:0]),
+		.reset_reset_n(1'b1),
+		.switch_external_connection_export(SW[9:0])
+		
+	);
 
 
 
