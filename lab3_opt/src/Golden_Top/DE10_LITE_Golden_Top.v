@@ -59,7 +59,7 @@ module DE10_LITE_Golden_Top(
 	inout 		          		ARDUINO_RESET_N,
 
 	//////////// GPIO, GPIO connect to GPIO Default //////////
-	inout 		    [35:0]		GPIO
+	inout 	reg	    [35:0]		GPIO
 );
 
 	wire [31:0] SAMPLE;
@@ -91,6 +91,10 @@ fir filter(
 	.new_sample(SAMPLE_CLK),
 	.clk(MAX10_CLK1_50)
 	);
+
+	always @* begin
+		GPIO = SAMPLE_CLK;
+	end
 	
 //=======================================================
 //  Structural coding
