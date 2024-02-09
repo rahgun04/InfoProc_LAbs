@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("/home/rahul/ELEC50009/lab3_opt/src/Golden_Top/") File("DE10_LITE_Golden_Top.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("D:/Uni/Year-2/InfoProc/InfoProc_LAbs/lab3_opt/src/Golden_Top/") File("DE10_LITE_Golden_Top.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

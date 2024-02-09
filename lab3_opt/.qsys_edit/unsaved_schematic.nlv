@@ -1,32 +1,34 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst unsaved.led -pg 1 -lvl 3 -y 1000
+preplace inst unsaved.led -pg 1 -lvl 3 -y 1030
 preplace inst unsaved.cpu.clock_bridge -pg 1
-preplace inst unsaved.timer_0 -pg 1 -lvl 3 -y 900
+preplace inst unsaved.timer_0 -pg 1 -lvl 3 -y 930
 preplace inst unsaved.in_L -pg 1 -lvl 3 -y 130
-preplace inst unsaved.accelerometer_spi -pg 1 -lvl 3 -y 500
-preplace inst unsaved.jtag_uart -pg 1 -lvl 3 -y 620
+preplace inst unsaved.accelerometer_spi -pg 1 -lvl 3 -y 530
+preplace inst unsaved.jtag_uart -pg 1 -lvl 3 -y 650
 preplace inst unsaved.cpu.cpu -pg 1
 preplace inst unsaved.cpu -pg 1 -lvl 2 -y 800
-preplace inst unsaved.clk -pg 1 -lvl 1 -y 1040
+preplace inst unsaved.clk -pg 1 -lvl 1 -y 1070
 preplace inst unsaved.out0 -pg 1 -lvl 3 -y 230
-preplace inst unsaved.onchip_memory -pg 1 -lvl 3 -y 820
+preplace inst unsaved.onchip_memory -pg 1 -lvl 3 -y 850
 preplace inst unsaved.out1 -pg 1 -lvl 3 -y 330
-preplace inst unsaved.timer -pg 1 -lvl 3 -y 720
+preplace inst unsaved.timer -pg 1 -lvl 3 -y 750
 preplace inst unsaved.in_H -pg 1 -lvl 3 -y 30
 preplace inst unsaved.cpu.reset_bridge -pg 1
+preplace inst unsaved.sample_clk -pg 1 -lvl 3 -y 430
 preplace inst unsaved -pg 1 -lvl 1 -y 40 -regy -20
 preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)in_H.external_connection,(SLAVE)unsaved.in_h_external_connection) 1 0 3 NJ 60 NJ 60 NJ
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.accelerometer_spi_external_interface,(SLAVE)accelerometer_spi.external_interface) 1 0 3 NJ 940 NJ 940 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)accelerometer_spi.external_interface,(SLAVE)unsaved.accelerometer_spi_external_interface) 1 0 3 NJ 580 NJ 580 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.sample_clk_external_connection,(SLAVE)sample_clk.external_connection) 1 0 3 NJ 460 NJ 460 NJ
 preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)out0.external_connection,(SLAVE)unsaved.out0_external_connection) 1 0 3 NJ 260 NJ 260 NJ
-preplace netloc INTERCONNECT<net_container>unsaved</net_container>(SLAVE)in_H.s1,(SLAVE)cpu.debug_mem_slave,(SLAVE)in_L.s1,(SLAVE)out1.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)onchip_memory.s1,(MASTER)cpu.data_master,(SLAVE)accelerometer_spi.avalon_accelerometer_spi_mode_slave,(SLAVE)timer_0.s1,(MASTER)cpu.instruction_master,(SLAVE)out0.s1,(SLAVE)timer.s1,(SLAVE)led.s1) 1 1 2 450 960 830
-preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)timer.clk,(SLAVE)in_H.clk,(MASTER)clk.clk,(SLAVE)cpu.clk,(SLAVE)led.clk,(SLAVE)jtag_uart.clk,(SLAVE)out1.clk,(SLAVE)out0.clk,(SLAVE)timer_0.clk,(SLAVE)accelerometer_spi.clk,(SLAVE)in_L.clk,(SLAVE)onchip_memory.clk1) 1 1 2 410 1050 850
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)out1.external_connection,(SLAVE)unsaved.out1_external_connection) 1 0 3 NJ 360 NJ 360 NJ
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.clk,(SLAVE)clk.clk_in) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)accelerometer_spi.reset,(SLAVE)timer_0.reset,(SLAVE)onchip_memory.reset1,(MASTER)clk.clk_reset,(SLAVE)out1.reset,(SLAVE)out0.reset,(SLAVE)cpu.reset,(SLAVE)led.reset,(SLAVE)in_L.reset,(SLAVE)jtag_uart.reset,(SLAVE)in_H.reset,(SLAVE)timer.reset) 1 1 2 430 1070 870
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.in_l_external_connection,(SLAVE)in_L.external_connection) 1 0 3 NJ 160 NJ 160 NJ
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)clk.clk_in_reset,(SLAVE)unsaved.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.led_external_connection,(SLAVE)led.external_connection) 1 0 3 NJ 1030 NJ 1030 NJ
-preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)timer.irq,(SLAVE)timer_0.irq,(MASTER)cpu.irq,(SLAVE)accelerometer_spi.interrupt,(SLAVE)jtag_uart.irq) 1 2 1 890
+preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)timer_0.irq,(SLAVE)accelerometer_spi.interrupt,(SLAVE)timer.irq,(MASTER)cpu.irq,(SLAVE)jtag_uart.irq) 1 2 1 810
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.reset,(SLAVE)clk.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)in_L.external_connection,(SLAVE)unsaved.in_l_external_connection) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)clk.clk_in,(SLAVE)unsaved.clk) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)out1.clk,(SLAVE)cpu.clk,(SLAVE)led.clk,(SLAVE)timer_0.clk,(SLAVE)sample_clk.clk,(SLAVE)in_L.clk,(MASTER)clk.clk,(SLAVE)jtag_uart.clk,(SLAVE)accelerometer_spi.clk,(SLAVE)out0.clk,(SLAVE)timer.clk,(SLAVE)in_H.clk,(SLAVE)onchip_memory.clk1) 1 1 2 410 1080 850
+preplace netloc INTERCONNECT<net_container>unsaved</net_container>(SLAVE)cpu.debug_mem_slave,(SLAVE)onchip_memory.s1,(SLAVE)led.s1,(SLAVE)accelerometer_spi.avalon_accelerometer_spi_mode_slave,(MASTER)cpu.data_master,(MASTER)cpu.instruction_master,(SLAVE)in_H.s1,(SLAVE)timer_0.s1,(SLAVE)timer.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)out0.s1,(SLAVE)in_L.s1,(SLAVE)sample_clk.s1,(SLAVE)out1.s1) 1 1 2 450 940 830
+preplace netloc FAN_OUT<net_container>unsaved</net_container>(SLAVE)timer.reset,(SLAVE)out1.reset,(SLAVE)out0.reset,(SLAVE)accelerometer_spi.reset,(SLAVE)cpu.reset,(SLAVE)in_H.reset,(SLAVE)onchip_memory.reset1,(SLAVE)jtag_uart.reset,(SLAVE)timer_0.reset,(MASTER)clk.clk_reset,(SLAVE)sample_clk.reset,(SLAVE)led.reset,(SLAVE)in_L.reset) 1 1 2 430 1100 870
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.out1_external_connection,(SLAVE)out1.external_connection) 1 0 3 NJ 360 NJ 360 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.led_external_connection,(SLAVE)led.external_connection) 1 0 3 NJ 1060 NJ 1060 NJ
 levelinfo -pg 1 0 200 1190
 levelinfo -hier unsaved 210 240 570 930 1180

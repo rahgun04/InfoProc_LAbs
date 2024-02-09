@@ -59,7 +59,7 @@ module DE10_LITE_Golden_Top(
 	inout 		          		ARDUINO_RESET_N,
 
 	//////////// GPIO, GPIO connect to GPIO Default //////////
-	inout 	reg	    [35:0]		GPIO
+	inout 		reg    [35:0]		GPIO
 );
 
 	wire [31:0] SAMPLE;
@@ -93,7 +93,7 @@ fir filter(
 	);
 
 	always @* begin
-		GPIO = SAMPLE_CLK;
+		GPIO = {36{SAMPLE_CLK}};
 	end
 	
 //=======================================================
